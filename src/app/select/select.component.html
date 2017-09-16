@@ -1,4 +1,12 @@
 <md-toolbar color="primary">Hello ngHouston</md-toolbar>
 <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
-  <h1>Choose a Pokemon</h1>
+  <h1>Choose a Recipe</h1>
+  <md-select
+  placeholder="Recipe" 
+  color="accent"
+  formControlName="recipe">
+  <md-option *ngFor="let recipe of recipes" [value]="recipe.title">
+    {{ recipe.title }}
+  </md-option>
+</md-select>
 </div>

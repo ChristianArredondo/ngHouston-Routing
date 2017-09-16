@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Recipe, Ingredient, RecipeService } from "../recipe.service";
 
 @Component({
   selector: 'app-select',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select.component.css']
 })
 export class SelectComponent implements OnInit {
+  recipes: Recipe[];
 
-  constructor() { }
+  constructor(
+    private recipeService: RecipeService
+  ) {
+    this.recipes = this.recipeService.getRecipes();
+    console.log(this.recipes);
+  }
 
   ngOnInit() {
   }
