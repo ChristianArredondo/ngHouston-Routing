@@ -9,6 +9,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {
   MdAutocompleteModule,
+  MdButtonModule,
+  MdCardModule,
   MdSelectModule,
   MdToolbarModule
 } from '@angular/material';
@@ -30,6 +32,8 @@ import { RecipeService } from './recipe.service';
     BrowserAnimationsModule,
     BrowserModule,
     FlexLayoutModule,
+    MdCardModule,
+    MdButtonModule,
     MdSelectModule,
     MdToolbarModule
   ],

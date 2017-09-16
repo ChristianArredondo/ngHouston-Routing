@@ -7,9 +7,11 @@ export interface Ingredient {
 }
 
 export interface Recipe {
+  id: number;
   title: string;
   description: string;
   ingredients: Ingredient[];
+  imgUrl: string;
 }
 
 export class RecipeService {
@@ -17,8 +19,10 @@ export class RecipeService {
 
   recipes: Recipe[] = [
     {
+      id: 0,
       title: 'Spaghetti',
       description: 'The delicious Italian classic',
+      imgUrl: 'http://img.taste.com.au/ZfBKx8SH/taste/2016/11/beef-and-olive-spaghetti-bolognese-109377-1.jpeg',
       ingredients: [
         {
           name: 'meat', 
@@ -29,15 +33,19 @@ export class RecipeService {
       ]
     },
     {
+      id: 1,
       title: 'Sandwich',
       description: 'Just make one.',
+      imgUrl: 'http://lifecdn.dailyburn.com/life/wp-content/uploads/2013/09/Michican-Cherry-Chicken-Salad.jpg',
       ingredients: [
         {
-          name: 'meat', 
-          amount: 2},
+          name: 'Deli Meat', 
+          amount: 4,
+        },
         {
-          name: 'bread', 
-          amount: 2}
+          name: 'Bread', 
+          amount: 2
+        }
       ]
     }
   ]

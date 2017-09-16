@@ -1,6 +1,18 @@
 :host {
   display: flex;
   flex-direction: column;
-  height: 75vh;
+  height: 75%;
   background: #DADADA;
+}
+
+.card {
+  width: 500px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+p {
+  margin: 8px 0;
 }

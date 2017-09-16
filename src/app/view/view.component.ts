@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipeService } from '../recipe.service';
+import { Recipe, RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-view',
@@ -7,13 +7,15 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./view.component.css']
 })
 export class ViewComponent implements OnInit {
-  recipes;
+  recipe: Recipe;
+  id: number;
 
   constructor(
     private recipeService: RecipeService
   ) {
-    this.recipes = this.recipeService.getRecipes();
-    console.log(this.recipes);
+    this.id = 1;
+    this.recipe = this.recipeService.getRecipes()[this.id];
+    console.log(this.recipe);
   }
 
   ngOnInit() {
