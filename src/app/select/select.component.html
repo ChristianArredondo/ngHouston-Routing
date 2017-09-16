@@ -4,8 +4,8 @@
   <md-select
   placeholder="Recipe" 
   color="accent"
-  formControlName="recipe">
-  <md-option *ngFor="let recipe of recipes" [value]="recipe.title">
+  [formControl]="recipeControl">
+  <md-option *ngFor="let recipe of recipes" [value]="recipe.id">
     {{ recipe.title }}
   </md-option>
 </md-select>

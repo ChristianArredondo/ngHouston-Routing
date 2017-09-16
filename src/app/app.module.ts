@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { RouterModule} from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
   MdAutocompleteModule,
@@ -32,10 +33,12 @@ import { RecipeService } from './recipe.service';
     BrowserAnimationsModule,
     BrowserModule,
     FlexLayoutModule,
+    FormsModule,
     MdCardModule,
     MdButtonModule,
     MdSelectModule,
-    MdToolbarModule
+    MdToolbarModule,
+    ReactiveFormsModule
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]
