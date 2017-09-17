@@ -14,21 +14,23 @@ export class SinglePageComponent implements OnInit {
   recipes: Recipe[];
   recipe: Recipe;
   id: number;
+  editMode = false;
 
   constructor(
     private _formBuilder: FormBuilder,
-    private recipeService: RecipeService
+    private _recipeService: RecipeService
   ) {
-    this.recipes = this.recipeService.getRecipes();
+    this.recipes = this._recipeService.getRecipes();
+    this._recipeService.updatedRecipes
+      .subscribe(recipes => this.recipes = recipes);
     this.formGroup = this._initFormGroup()
   }
 
   ngOnInit() {
     this.recipeControl.valueChanges
     .subscribe(id => {
-      console.log(id);
       this.id = id;
-      this.recipe = this.fetchRecipe(id);
+      this.recipe = this.recipes[id];
     });
   }
 
@@ -41,12 +43,29 @@ export class SinglePageComponent implements OnInit {
 
   private _setFormGroup () {
     this.formGroup.patchValue({
-      // title: this.recipe.title
+      title: this.recipe.title,
+      description: this.recipe.description
     })
   }
 
-  fetchRecipe (id) {
-    return this.recipeService.getRecipes()[this.id];
+  fetchRecipe (id: number) {
+    return this._recipeService.getRecipes()[this.id];
+  }
+
+  onEdit () {
+    this._setFormGroup();
+    this.editMode = !this.editMode;
+  }
+
+  onCancel () {
+    this.editMode = false;
+  }
+
+  onSave () {
+    const updatedTitle = this.formGroup.get('title').value;
+    const updatedDesc = this.formGroup.get('description').value;
+    this._recipeService.updateRecipe(this.id, updatedTitle, updatedDesc);
+    this.editMode = false;
   }
 
 }

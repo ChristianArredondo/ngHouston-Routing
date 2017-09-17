@@ -8,11 +8,6 @@
   height: 100%;
 }
 
-.select, .view, .edit {
-  display: flex;
-
-}
-
 .select .example-full-width {
   width: 20%;
 }

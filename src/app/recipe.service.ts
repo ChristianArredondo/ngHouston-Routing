@@ -56,6 +56,12 @@ export class RecipeService {
     return [...this.recipes];
  }
 
+ updateRecipe (id: number, title: string, description: string) {
+   this.recipes[id].title = title;
+   this.recipes[id].description = description;
+   this.updatedRecipes.next([...this.recipes])
+ }
+
 //   addPost (post: Post) {
 //     this.posts.push(post);
 //     this.updatedPosts.next(this.posts.slice());

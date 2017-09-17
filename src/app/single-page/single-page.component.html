@@ -1,59 +1,53 @@
-<md-toolbar color="primary">Hello ngHouston</md-toolbar>
+<md-toolbar color="primary">
+  <span>Hello ngHouston!</span>
+  <span class="example-spacer"></span>
+  <span><img src="favicon.ico" alt=""></span>
+</md-toolbar>
 <div fxLayout="row" class="combined">
-  <div class="select" fxFlex="50">
-    <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
-      <h1>Choose a Recipe</h1>
-      <md-select
+  <div fxLayout="column" fxLayoutAlign="center center" fxFlex="50">
+    <h1>Choose a Recipe</h1>
+    <md-select
       placeholder="Recipe" 
       color="accent"
       [formControl]="recipeControl"
-      class="example-full-width">
+      style="width: 35%;">
       <md-option *ngFor="let recipe of recipes" [value]="recipe.id">
         {{ recipe.title }}
       </md-option>
     </md-select>
-    </div>
   </div>
-  <div class="view" fxFlex="50">
-    <div fxLayoutAlign="center center" fxFlex>
-        <p *ngIf="!recipe">Waiting for recipe...</p>
-        <md-card class="card" *ngIf="recipe">
-          <md-card-header>
-            <!-- <div md-card-avatar class="example-header-image"></div> -->
-            <md-card-title>{{ recipe.title }}</md-card-title>
-            <md-card-subtitle>{{ recipe.description}}</md-card-subtitle>
-          </md-card-header>
-          <img md-card-image [src]="recipe.imgUrl" alt="Spaghetti">
-          <md-card-content>
-            <p>Ingredients</p>
-            <div fxLayout="row" *ngFor="let ingredient of recipe.ingredients">
-              <p fxFlex="grow" fxFlex="20">{{ ingredient.name }}</p>
-              <p fxFlex="noshrink">{{ ingredient.amount }}</p>
+  <div fxLayoutAlign="center center" fxFlex="50" fxLayout="column" style="background:#ededed;">
+      <p *ngIf="!recipe">Waiting for recipe...</p>
+      <md-card class="card" *ngIf="recipe">
+        <md-card-header>
+          <md-card-title>{{ recipe.title }}</md-card-title>
+          <md-card-subtitle>{{ recipe.description}}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image [src]="recipe.imgUrl" alt="Spaghetti">
+        <md-card-content>
+          <p>Ingredients</p>
+          <div fxLayout="row" *ngFor="let ingredient of recipe.ingredients">
+            <p fxFlex="grow" fxFlex="20">{{ ingredient.name }}</p>
+            <p fxFlex="noshrink">{{ ingredient.amount }}</p>
+          </div>
+        </md-card-content>
+        <md-card-actions>
+          <button md-button color="primary" (click)="onEdit()">EDIT</button>
+        </md-card-actions>
+      </md-card>
+      <div *ngIf="editMode" fxLayout="column" fxLayoutAlign="center center" fxFlex>
+          <form class="example-form" [formGroup]="formGroup">
+            <md-form-field class="example-full-width">
+              <input mdInput placeholder="Title" formControlName="title">
+            </md-form-field>
+            <md-form-field class="example-full-width">
+              <input mdInput placeholder="Description" formControlName="description">
+            </md-form-field>
+            <div align="end">
+              <button md-button color="primary" (click)="onSave()">Save</button>
+              <button md-button color="primary" (click)="onCancel()">Cancel</button>
             </div>
-          </md-card-content>
-          <md-card-actions>
-            <button md-button color="primary">LIKE</button>
-            <button md-button color="primary">SHARE</button>
-            <button md-button color="primary">EDIT</button>
-          </md-card-actions>
-        </md-card>
-      </div>  
-  </div>
+          </form>
+      </div>
+    </div>
 </div>
-<!-- <div class="edit">
-  <md-toolbar color="primary">Editing:</md-toolbar>
-  <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
-      <form class="example-form" [formGroup]="formGroup">
-        <md-form-field class="example-full-width">
-          <input mdInput placeholder="Title">
-        </md-form-field>
-        <md-form-field class="example-full-width">
-          <input mdInput placeholder="Description">
-        </md-form-field>
-        <div align="end">
-          <button md-button color="primary">Save</button>
-          <button md-button color="primary">Cancel</button>
-        </div>
-      </form>
-  </div>
-</div> -->
