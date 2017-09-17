@@ -38,14 +38,14 @@ export class SinglePageComponent implements OnInit {
     return this._formBuilder.group(<Partial<Recipe>>{
       title: '',
       description: ''
-    })
+    });
   }
 
   private _setFormGroup () {
     this.formGroup.patchValue({
       title: this.recipe.title,
       description: this.recipe.description
-    })
+    });
   }
 
   fetchRecipe (id: number) {

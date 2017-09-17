@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe, RecipeService } from "../recipe.service";
+import { Recipe, RecipeService } from '../recipe.service';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -18,7 +18,10 @@ export class SelectComponent implements OnInit {
   ) {
     this.recipes = this.recipeService.getRecipes();
     this.recipeControl.valueChanges
-      .subscribe(id => this.id = id);
+      .subscribe(id => {
+        this.id = id;
+        console.log(id);
+      });
   }
 
   ngOnInit() {

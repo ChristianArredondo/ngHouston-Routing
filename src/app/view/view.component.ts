@@ -13,7 +13,7 @@ export class ViewComponent implements OnInit {
   constructor(
     private recipeService: RecipeService
   ) {
-    this.id = 1;
+    this.id = 0;
     this.recipe = this.recipeService.getRecipes()[this.id];
     console.log(this.recipe);
   }
