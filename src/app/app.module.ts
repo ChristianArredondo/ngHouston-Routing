@@ -12,6 +12,7 @@ import {
   MdAutocompleteModule,
   MdButtonModule,
   MdCardModule,
+  MdInputModule,
   MdSelectModule,
   MdToolbarModule
 } from '@angular/material';
@@ -36,6 +37,7 @@ import { RecipeService } from './recipe.service';
     FormsModule,
     MdCardModule,
     MdButtonModule,
+    MdInputModule,
     MdSelectModule,
     MdToolbarModule,
     ReactiveFormsModule

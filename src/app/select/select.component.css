@@ -3,3 +3,7 @@
   flex-direction: column;
   height: 75vh;
 }
+
+.example-full-width {
+  width: 20%;
+}

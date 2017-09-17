@@ -1,4 +1,15 @@
-<md-toolbar color="primary">Hello ngHouston</md-toolbar>
+<md-toolbar color="primary">Editing:</md-toolbar>
 <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
-  <h1>Edit something</h1>
+    <form class="example-form" [formGroup]="formGroup">
+      <md-form-field class="example-full-width">
+        <input mdInput placeholder="Title">
+      </md-form-field>
+      <md-form-field class="example-full-width">
+        <input mdInput placeholder="Description">
+      </md-form-field>
+      <div align="end">
+        <button md-button color="primary">Save</button>
+        <button md-button color="primary">Cancel</button>
+      </div>
+    </form>
 </div>
