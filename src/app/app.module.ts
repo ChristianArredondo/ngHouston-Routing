@@ -21,6 +21,7 @@ import { SelectComponent } from './select/select.component';
 import { ViewComponent } from './view/view.component';
 import { EditComponent } from './edit/edit.component';
 import { RecipeService } from './recipe.service';
+import { SinglePageComponent } from './single-page/single-page.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { RecipeService } from './recipe.service';
     AppComponent,
     SelectComponent,
     ViewComponent,
-    EditComponent
+    EditComponent,
+    SinglePageComponent
   ],
   imports: [
     BrowserAnimationsModule,
