@@ -62,26 +62,4 @@ export class RecipeService {
    this.updatedRecipes.next([...this.recipes])
  }
 
-//   addPost (post: Post) {
-//     this.posts.push(post);
-//     this.updatedPosts.next(this.posts.slice());
-//   }
-
-//   getNewId () {
-//     return this.posts.length;
-//   }
-
-//   addComment (id: number, body: string) {
-//     const newComment = {
-//       comment_id: this.posts[id].comments.length,
-//       user: this.christian,
-//       postDate: '09/15/17,',
-//       commentBody: body,
-//       votes: 0,
-//     };
-//     this.posts[id].comments.push(newComment);
-//     console.log(this.posts);
-//     // this.updatedPosts.next(this.posts.slice());
-//   }
-
 }
