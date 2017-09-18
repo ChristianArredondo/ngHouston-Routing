@@ -2,14 +2,14 @@
 <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
     <form class="example-form" [formGroup]="formGroup">
       <md-form-field class="example-full-width">
-        <input mdInput placeholder="Title">
+        <input mdInput placeholder="Title" formControlName="title">
       </md-form-field>
       <md-form-field class="example-full-width">
-        <input mdInput placeholder="Description">
+        <input mdInput placeholder="Description" formControlName="description">
       </md-form-field>
       <div align="end">
-        <button md-button color="primary">Save</button>
-        <button md-button color="primary">Cancel</button>
+        <button md-button color="primary" (click)="onSave()">Save</button>
+        <button md-button color="primary" [routerLink]="['/recipes', recipe.id]">Cancel</button>
       </div>
     </form>
 </div>

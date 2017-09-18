@@ -22,6 +22,7 @@ import { ViewComponent } from './view/view.component';
 import { EditComponent } from './edit/edit.component';
 import { RecipeService } from './recipe.service';
 import { SinglePageComponent } from './single-page/single-page.component';
+import { APP_ROUTES } from './routes';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { SinglePageComponent } from './single-page/single-page.component';
     MdInputModule,
     MdSelectModule,
     MdToolbarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]
