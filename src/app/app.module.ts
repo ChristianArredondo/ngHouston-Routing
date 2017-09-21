@@ -39,7 +39,7 @@ import { SinglePageComponent } from './single-page/single-page.component';
     MdInputModule,
     MdSelectModule,
     MdToolbarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]

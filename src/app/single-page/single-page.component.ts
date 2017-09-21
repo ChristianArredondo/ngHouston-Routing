@@ -24,6 +24,7 @@ export class SinglePageComponent implements OnInit {
     this.recipeControl.valueChanges
       .subscribe(id => {
         this.id = id;
+        console.log(this.id);
         this.recipe = this.recipes[id];
       });
   }
@@ -34,6 +35,7 @@ export class SinglePageComponent implements OnInit {
 
   onClear () {
     this.recipe = null;
+    this.recipeControl.patchValue(null);
   }
 
 }

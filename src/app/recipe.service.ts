@@ -22,7 +22,7 @@ export class RecipeService {
       id: 0,
       title: 'Spaghetti',
       description: 'The delicious Italian classic.',
-      imgUrl: 'http://img.taste.com.au/ZfBKx8SH/taste/2016/11/beef-and-olive-spaghetti-bolognese-109377-1.jpeg',
+      imgUrl: '../assets/spaghetti.jpg',
       ingredients: [
         {
           name: 'Meat',
@@ -36,7 +36,7 @@ export class RecipeService {
       id: 1,
       title: 'Sandwich',
       description: 'Just make one.',
-      imgUrl: 'http://lifecdn.dailyburn.com/life/wp-content/uploads/2013/09/Michican-Cherry-Chicken-Salad.jpg',
+      imgUrl: '../assets/sandwich.jpg',
       ingredients: [
         {
           name: 'Deli Meat',
@@ -52,12 +52,8 @@ export class RecipeService {
       id: 2,
       title: 'Krabby Patty',
       description: 'The one and only.',
-      imgUrl: 'https://i.ytimg.com/vi/k5e1HPeusiA/hqdefault.jpg',
+      imgUrl: '../assets/krabby.jpg',
       ingredients: [
-        {
-          name: 'Seaweed',
-          amount: 2,
-        },
         {
           name: 'Buns',
           amount: 2
@@ -72,7 +68,7 @@ export class RecipeService {
       id: 3,
       title: 'Fried Squirrel',
       description: `The chicken of the trees.`,
-      imgUrl: 'http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/6/2012/03/squirrel.jpg',
+      imgUrl: '../assets/squirrel.jpg',
       ingredients: [
         {
           name: 'Squirrel',
@@ -80,10 +76,6 @@ export class RecipeService {
         },
         {
           name: 'Rifle',
-          amount: 1
-        },
-        {
-          name: 'Bullets',
           amount: 1
         }
       ]
