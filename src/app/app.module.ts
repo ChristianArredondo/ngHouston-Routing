@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { RouterModule} from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -22,7 +21,6 @@ import { ViewComponent } from './view/view.component';
 import { EditComponent } from './edit/edit.component';
 import { RecipeService } from './recipe.service';
 import { SinglePageComponent } from './single-page/single-page.component';
-import { APP_ROUTES } from './routes';
 
 
 @NgModule({
@@ -43,8 +41,7 @@ import { APP_ROUTES } from './routes';
     MdInputModule,
     MdSelectModule,
     MdToolbarModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(APP_ROUTES)
+    ReactiveFormsModule
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]

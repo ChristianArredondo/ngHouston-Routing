@@ -32,22 +32,8 @@
           </div>
         </md-card-content>
         <md-card-actions>
-          <button md-button color="primary" (click)="onEdit()">EDIT</button>
+          <button md-button color="primary" (click)="onClear()">CLEAR</button>
         </md-card-actions>
       </md-card>
-      <div *ngIf="editMode" fxLayout="column" fxLayoutAlign="center center" fxFlex>
-          <form class="example-form" [formGroup]="formGroup">
-            <md-form-field class="example-full-width">
-              <input mdInput placeholder="Title" formControlName="title">
-            </md-form-field>
-            <md-form-field class="example-full-width">
-              <input mdInput placeholder="Description" formControlName="description">
-            </md-form-field>
-            <div align="end">
-              <button md-button color="primary" (click)="onSave()">Save</button>
-              <button md-button color="primary" (click)="onCancel()">Cancel</button>
-            </div>
-          </form>
-      </div>
     </div>
 </div>
