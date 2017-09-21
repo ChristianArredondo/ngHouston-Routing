@@ -18,7 +18,6 @@ import {
 
 import { SelectComponent } from './select/select.component';
 import { ViewComponent } from './view/view.component';
-import { EditComponent } from './edit/edit.component';
 import { RecipeService } from './recipe.service';
 import { SinglePageComponent } from './single-page/single-page.component';
 
@@ -28,7 +27,6 @@ import { SinglePageComponent } from './single-page/single-page.component';
     AppComponent,
     SelectComponent,
     ViewComponent,
-    EditComponent,
     SinglePageComponent
   ],
   imports: [
